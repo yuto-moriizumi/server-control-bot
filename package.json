@@ -16,7 +16,7 @@
     "dotenv": "^16.4.1"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.2",
+    "@tsconfig/node18": "^18.2.4",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
