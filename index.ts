@@ -1,5 +1,5 @@
 import { Client, REST, Routes } from "discord.js";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { execSync } from "child_process";
 import { validateEnv } from "@volgakurvar/vaidate-env";
 import { str } from "envalid";
@@ -67,7 +67,7 @@ function main(env: Env) {
           case "鯖スタート":
           case "鯖再起":
           case "鯖停止":
-          case "鯖アップデート":
+          case "鯖アップデート": {
             const key = interaction.commandName as keyof typeof COMMAND;
             await interaction.deferReply();
             const result = execSync(COMMAND[key].cmd).toString();
@@ -75,6 +75,7 @@ function main(env: Env) {
             if (result !== "") message += "\n```" + result + "```";
             await interaction.followUp(message);
             break;
+          }
           default:
             break;
         }
